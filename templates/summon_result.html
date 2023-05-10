@@ -1,0 +1,9 @@
+<h1>Summon Result for {{ local_govt.name }}</h1>
+<p>Total Summon Result: {{ total_summon }}</p>
+
+<h2>Polling Units:</h2>
+<ul>
+    {% for unit in polling_units %}
+        <li>{{ unit.name }}: {{ unit.summon }}</li>
+    {% endfor %}
+</ul>

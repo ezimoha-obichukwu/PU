@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>POLLING UNITS RESULT</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>PU_UNIQUEID</th>
+        <th>PARTY</th>
+        <th>SCORE</th>
+        <th>USER</th>
+        <th>DATE_ENTERED</th>
+        <th>IP_ADDRESS</th>
+      </tr>
+    {% for result in all_unit %}
+  <tr>
+    <td>{{result.result_id}}</td>
+    <td>{{result.polling_unit_uniqueid}}</td>
+    <td>{{result.party_abbreviation}}</td>
+    <td>{{result.party_score}}</td>
+    <td>{{result.entered_by_user}}</td>
+    <td>{{result.date_entered}}</td>
+    <td>{{result.user_ip_address}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>

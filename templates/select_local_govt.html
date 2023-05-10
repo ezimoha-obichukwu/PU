@@ -1,0 +1,10 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="local_govt">Select Local Government:</label>
+    <select name="local_govt" id="local_govt">
+        {% for local_govt in local_govts %}
+            <option value="{{ local_govt.id }}">{{ local_govt.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Get Summon Result</button>
+</form>
